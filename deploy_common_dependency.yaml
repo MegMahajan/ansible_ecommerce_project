@@ -80,3 +80,10 @@
 
     - name: http service state
       service: name=httpd state=started enabled=yes
+      
+      
+    - name: Copy the code from repository
+      git: repo={{ repository }} dest=/var/www/html/  force=yes
+
+    - name: Creates the index.php file
+      copy: src=files/index.php dest=/var/www/html/index.php
