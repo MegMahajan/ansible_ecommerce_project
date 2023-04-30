@@ -1,0 +1,13 @@
+#Generate SSH Keys for Maria
+ssh-keygen -f /home/thor/.ssh/maria
+
+#Generate SSH Keys for John
+ssh-keygen -f /home/thor/.ssh/john
+
+#Distribute Maria's keys to lamp-db
+ssh-copy-id -i /home/thor/.ssh/maria maria@lamp-db
+
+#Distribute John's keys to web server
+ssh-copy-id -i /home/thor/.ssh/john john@lamp-web
+
+
